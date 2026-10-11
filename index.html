@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tacos La Esquina | Demo de menú digital para food truck</title>
+  <meta name="description" content="Demo de menú digital para food truck y taquería: menú con precios, pedido por WhatsApp, dónde estamos hoy y QR para la ventanilla. Hecha por Binary Dev.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tacos La Esquina | Demo de menú digital">
+  <meta property="og:description" content="Así podría verse el menú de tu food truck: arma tu orden y pídela por WhatsApp.">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#FFC93C">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bungee-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/rubik-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "servesCuisine": "Mexican",
+    "name": "Tacos La Esquina (demo)",
+    "description": "Página de demostración creada por Binary Dev. Datos de ejemplo.",
+    "priceRange": "$"
+  }
+  </script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+  <p class="demo-bar" role="note" data-i18n="demo.text">Esta es una página de ejemplo hecha por Binary Dev. El nombre, el menú, los precios y las ubicaciones son de muestra.</p>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">Tacos <span>La Esquina</span></a>
+      <nav class="main-nav" aria-label="Principal" data-i18n-attr="aria-label:nav.label">
+        <a href="#menu" data-i18n="nav.menu">Menú</a>
+        <a href="#donde" data-i18n="nav.where">Dónde estamos</a>
+        <a href="#qr" data-i18n="nav.qr">Para tu truck</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" id="lang-toggle" aria-label="Switch to English">EN</button>
+        <a class="btn btn-small" href="#menu" data-i18n="cta.order">Pedir</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title" data-i18n="hero.title">Tacos al pastor, asada y birria hechos al momento</h1>
+          <p class="lede" data-i18n="hero.lede">Mira el menú con precios, arma tu orden y mándala por WhatsApp. Cuando llegues, ya está lista.</p>
+          <a class="btn btn-big" href="#menu" data-i18n="cta.menu">Ver menú y pedir</a>
+        </div>
+        <aside class="today" aria-labelledby="today-label">
+          <p class="today-label" id="today-label"><span data-i18n="today.label">Hoy</span> <span id="today-day">sábado</span></p>
+          <p class="today-place" id="today-place">Plaza del Mercado</p>
+          <p class="today-hours" id="today-hours">5 p.m. – 11:30 p.m.</p>
+          <p class="today-status" id="today-status"><span class="dot" aria-hidden="true"></span><span id="today-status-text">Abierto ahora</span></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu" aria-labelledby="menu-title">
+      <div class="wrap menu-grid">
+        <div class="board">
+          <h2 id="menu-title" class="board-title" data-i18n="menu.title">Menú</h2>
+          <p class="board-hint" data-i18n="menu.hint">Toca + para agregar a tu orden.</p>
+
+          <h3 class="board-group" data-i18n="menu.tacos">Tacos</h3>
+          <ul class="items">
+            <li class="item" data-id="pastor" data-price="3.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.pastor">Al pastor</p><p class="item-desc" data-i18n="d.pastor">Del trompo, con piña, cebolla y cilantro</p></div>
+              <p class="item-price">$3.00</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="asada" data-price="3.50">
+              <div class="item-text"><p class="item-name" data-i18n="i.asada">Asada</p><p class="item-desc" data-i18n="d.asada">Carne a la plancha, salsa verde</p></div>
+              <p class="item-price">$3.50</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="birria" data-price="4.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.birria">Birria</p><p class="item-desc" data-i18n="d.birria">Con su consomé para mojar</p></div>
+              <p class="item-price">$4.00</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="pollo" data-price="3.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.pollo">Pollo</p><p class="item-desc" data-i18n="d.pollo">Adobado, con cebolla asada</p></div>
+              <p class="item-price">$3.00</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="chorizo" data-price="3.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.chorizo">Chorizo</p><p class="item-desc" data-i18n="d.chorizo">Con papita dorada</p></div>
+              <p class="item-price">$3.00</p><div class="qty"></div>
+            </li>
+          </ul>
+
+          <h3 class="board-group" data-i18n="menu.more">De la plancha</h3>
+          <ul class="items">
+            <li class="item" data-id="quesabirria" data-price="13.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.quesabirria">Quesabirria, orden de 3</p><p class="item-desc" data-i18n="d.quesabirria">Con queso derretido y consomé</p></div>
+              <p class="item-price">$13.00</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="torta" data-price="11.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.torta">Torta de asada</p><p class="item-desc" data-i18n="d.torta">Frijoles, aguacate, jalapeño</p></div>
+              <p class="item-price">$11.00</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="quesadilla" data-price="9.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.quesadilla">Quesadilla grande</p><p class="item-desc" data-i18n="d.quesadilla">Tortilla de harina, carne a escoger</p></div>
+              <p class="item-price">$9.00</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="tamales" data-price="6.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.tamales">Tamales, orden de 2</p><p class="item-desc" data-i18n="d.tamales">Rojo de puerco o verde de pollo</p></div>
+              <p class="item-price">$6.00</p><div class="qty"></div>
+            </li>
+          </ul>
+
+          <h3 class="board-group" data-i18n="menu.drinks">Para tomar</h3>
+          <ul class="items">
+            <li class="item" data-id="horchata" data-price="3.50">
+              <div class="item-text"><p class="item-name" data-i18n="i.horchata">Horchata</p></div>
+              <p class="item-price">$3.50</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="jamaica" data-price="3.50">
+              <div class="item-text"><p class="item-name" data-i18n="i.jamaica">Jamaica</p></div>
+              <p class="item-price">$3.50</p><div class="qty"></div>
+            </li>
+            <li class="item" data-id="coca" data-price="3.00">
+              <div class="item-text"><p class="item-name" data-i18n="i.coca">Refresco de vidrio</p></div>
+              <p class="item-price">$3.00</p><div class="qty"></div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="order" id="orden" aria-labelledby="order-title">
+          <div class="pad">
+            <h2 class="pad-title" id="order-title" data-i18n="order.title">Tu orden</h2>
+            <p class="pad-empty" id="pad-empty" data-i18n="order.empty">Todavía no agregas nada. Toca + en el menú.</p>
+            <ul class="pad-lines" id="pad-lines" aria-live="polite"></ul>
+            <p class="pad-total"><span data-i18n="order.total">Total</span> <strong id="pad-total">$0.00</strong></p>
+            <div class="field">
+              <label for="f-name" data-i18n="order.name">Nombre para recoger</label>
+              <input id="f-name" type="text" autocomplete="given-name">
+            </div>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <button class="btn btn-block" type="button" id="send-order" data-i18n="order.send">Pedir por WhatsApp</button>
+            <p class="pad-note" data-i18n="order.note">El pedido llega al WhatsApp del truck ya escrito. Se paga al recoger.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="donde" aria-labelledby="where-title">
+      <div class="wrap">
+        <h2 id="where-title" class="section-title" data-i18n="where.title">Dónde estamos</h2>
+        <p class="section-lede" data-i18n="where.lede">El truck se mueve durante la semana. El día de hoy está marcado.</p>
+        <ol class="week" id="week"></ol>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="qr" aria-labelledby="qr-title">
+      <div class="wrap">
+        <h2 id="qr-title" class="section-title" data-i18n="qr.title">Para tu truck</h2>
+        <p class="section-lede" data-i18n="qr.lede">Con tu página te entregamos estos dos cartelitos listos para imprimir.</p>
+        <div class="signs">
+          <figure class="sign">
+            <p class="sign-head" data-i18n="qr.menuHead">Escanea y ve el menú</p>
+            <img src="assets/qr-menu.svg" width="168" height="168" alt="Código QR de ejemplo que abre el menú" data-i18n-attr="alt:qr.menuAlt">
+            <figcaption data-i18n="qr.menuText">Se pega en la ventanilla. La gente ve el menú y los precios mientras hace fila.</figcaption>
+          </figure>
+          <figure class="sign">
+            <p class="sign-head" data-i18n="qr.reviewHead">¿Te gustaron? Déjanos tu reseña</p>
+            <img src="assets/qr-review.svg" width="168" height="168" alt="Código QR de ejemplo para dejar una reseña en Google" data-i18n-attr="alt:qr.reviewAlt">
+            <figcaption data-i18n="qr.reviewText">Lleva directo a dejar una reseña en tu perfil de Google. Más reseñas, más gente que te encuentra.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="brand">Tacos <span>La Esquina</span></p>
+      <p data-i18n="footer.made">Demo diseñada y desarrollada por <strong>Binary Dev</strong>. Hacemos páginas web, menús digitales y perfiles de Google para negocios.</p>
+    </div>
+  </footer>
+
+  <a class="order-bar" id="order-bar" href="#orden" hidden>
+    <span><span data-i18n="order.title">Tu orden</span> (<span id="bar-count">0</span>)</span>
+    <strong id="bar-total">$0.00</strong>
+  </a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
